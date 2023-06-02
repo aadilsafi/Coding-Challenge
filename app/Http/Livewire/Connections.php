@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+
+class Connections extends Component
+{
+    public function render()
+    {
+        $auth_user = auth()->user();
+        $users = $auth_user->allConnections();
+        dd($users);
+        return  view('components.connection',compact('users'))->layout('layouts.livewire');
+    }
+}
