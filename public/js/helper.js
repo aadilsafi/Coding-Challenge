@@ -25,7 +25,6 @@ function ajax(url, method = "GET", functionBeforeSend, functionsOnSuccess, funct
         form = {};
     }
 
-    $('#content').html('')
     $.ajax({
         url: url,
         type: method,

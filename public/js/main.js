@@ -47,6 +47,7 @@ $(function () {
 });
 
 function commonBeforeSend() {
+    $('#content').html('')
     $('#skeleton').show()
     $('#load_more_btn').attr('onclick', 'getMore()')
 }
@@ -69,7 +70,7 @@ function commonRowDeleteSuccess(user_id){
         $(`#${user_id}`).remove();
     }
 }
-function getConnectionsInCommon(userId, connectionId) {
+function getConnectionsInCommon(userId) {
     // your code here...
     ajax(`/mutuals/${userId}`, 'GET',function(){
         $(`#connections_in_common_skeletons_${userId}`).show()

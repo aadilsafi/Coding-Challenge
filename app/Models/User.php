@@ -63,8 +63,6 @@ class User extends Authenticatable
         $first_connections = $this->allConnections();
         $second_connections = $user->allConnections();
         return $first_connections->whereIn('id',$second_connections->pluck('id'));
-
-
     }
 
 }
