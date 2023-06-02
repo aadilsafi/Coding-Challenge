@@ -15,13 +15,25 @@ class ConnectionInCommonSeeder extends Seeder
      */
     public function run()
     {
-    for($i=60;$i<=100;$i++){
-        $data = [
-            'sender_id' => $i,
-            'receiver_id' => 1,
-            'status' => 1,
-        ];
-        ConnectionRequest::create($data);
-    }
+        $all_connections = [];
+        for ($i = 2; $i <= 30; $i++) {
+            $data =
+                [
+                    'sender_id' => $i,
+                    'receiver_id' => 1,
+                    'status' => 1,
+                ];
+            array_push($all_connections, $data);
+            if ($i >= 3) {
+                $data =
+                    [
+                        'sender_id' => $i,
+                        'receiver_id' => 2,
+                        'status' => 1,
+                    ];
+                array_push($all_connections, $data);
+            }
+        }
+        ConnectionRequest::insert($all_connections);
     }
 }

@@ -15,14 +15,14 @@ class RequestSeeder extends Seeder
      */
     public function run()
     {
-        for($i=2;$i<=60;$i++){
-            if($i <= 30){
+        for($i=31;$i<=120;$i++){
+            if($i <= 60){
             $data = [
                 'sender_id' => $i,
                 'receiver_id' => 1,
                 'status' => 0,
             ];
-        }elseif($i > 30 && $i <= 60){
+        }elseif($i<= 90){
             $data = [
                 'sender_id' => 1,
                 'receiver_id' => $i,
