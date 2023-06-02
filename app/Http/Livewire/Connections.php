@@ -10,7 +10,6 @@ class Connections extends Component
     {
         $auth_user = auth()->user();
         $users = $auth_user->allConnections();
-        dd($users);
         return  view('components.connection',compact('users'))->layout('layouts.livewire');
     }
 }
